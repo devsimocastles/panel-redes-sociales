@@ -1,0 +1,48 @@
+@import "var";
+@import "mixin";
+
+h2.overview-container-title{
+    padding: 1em 0;
+    width: 99%;
+    margin: 0 auto;
+}
+.overview-card-container{
+    width: 80%;
+  .content{
+    @include responsiveGrid(250px);
+    margin: 0 auto;
+    width: 100% !important;
+  }
+    .overview-card{
+        @include setFlex(column, center, space-around, wrap);
+        padding: 1em 2em;
+        height: 125px;
+        min-width: 250px;
+        margin-bottom: 2em;
+        border-radius: 7px;
+        .row{
+            width: 100%;
+            @include setFlex(row, center, space-between, nowrap);
+            .stat-name{
+                font-weight: 700;
+            }
+            img{
+                margin-right: .25em;
+            }
+            .stat-number{
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+            .overview-today{
+                @include setFlex(row, center, space-between, nowrap);
+                font-weight: 700;
+                &.positive{
+                    color: $LimeGreen;
+                }
+                &.negative{
+                    color: $BrightRed;
+                }
+            }
+        }
+    }
+}
